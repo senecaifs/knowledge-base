@@ -2,6 +2,13 @@
 
 Seneca CTF Knowledge Base.
 
+## Contribution Guidelines
+
+- Create Markdown file in corresponding topic's directory
+- Use capitalized first letter + hyphens
+  - E.g. `Disaster-Recovery.md`
+- More to be added
+
 ## Project Structure
 
 ```
