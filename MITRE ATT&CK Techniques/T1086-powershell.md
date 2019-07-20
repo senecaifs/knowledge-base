@@ -27,11 +27,13 @@ Attackers may try to change the execution policy either through the registry, or
 Monitor for loading and/or execution of artifacts associated with Powershell specific assemblies, such as System.Management.Automation.dll 
 
 ### Enable Powershell logging using GP Editor
+
 Powershell 4.0 and 5.0 should have enhanced logging capabilities (earlier versions do not). To enable Powershell logging using GP Editor, first run `gpedit.msc` then navigate to `Computer Configuration\Administrative Templates\Windows Components\Windows PowerShell` and enable `Turn on PowerSehll Transcription`. When enabling, you can enter a prefered output directory (try to set this up in a way that will send logs to our logging server). You can also tick the `Include invocation headers:` option to include the command start time for each command.  
 
 ## Mitigation
 
 ### Execution Policy
+
 Restrict Powershell execution policy to admins, and only signed scripts (if you're bold). To do this, open a Powershell window as an admin, and use the cmdlet `Set-ExecutionPolicy`. You can look up which execution policy to use based your needs [here.](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)
 
-Disable the WinRM service to help prevent uses of Powershell for remote execution. 
+Disable the WinRM service to help prevent uses of Powershell for remote execution.
