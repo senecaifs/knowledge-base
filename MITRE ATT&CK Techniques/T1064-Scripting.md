@@ -29,5 +29,6 @@ Disable any unused features such as VBScript or restrict access to scripting eng
 To mitigate against Office macros, enable protected view and block macros through Group Policy. Having a virtualized enviroment, or application microsegmentation may also aid in mitigating the impact of a compromise, however, additional exploits and weaknesses in implementation may still exist.
 
 ## References
+
   - [https://attack.mitre.org/techniques/T1064/](https://attack.mitre.org/techniques/T1064/)
   - [https://null-byte.wonderhowto.com/how-to/execute-code-microsoft-word-document-without-security-warnings-0180495/]
