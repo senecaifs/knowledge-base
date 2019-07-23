@@ -34,7 +34,7 @@ For changes to the registry keys for `sdclt.exe`, monitor any changes to the fol
 
 Additionally, monitor the processes being run by the applications commonly targeted in these attacks for unusual activity. 
 
-###Sysmon Event IDs 
+### Sysmon Event IDs 
 
 **12** – Registry object added or deleted
 
