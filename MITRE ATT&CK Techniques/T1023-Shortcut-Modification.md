@@ -33,9 +33,7 @@ Identify and block unknown, potentially malicious software that may be executed 
 
 ## References
 
--   **Mitre article**
-    
-    -   [https://attack.mitre.org/techniques/T1023/](https://attack.mitre.org/techniques/T1023/)
--   [https://www.sentinelone.com/blog/windows-shortcut-file-lnk-sneaking-malware/](https://www.sentinelone.com/blog/windows-shortcut-file-lnk-sneaking-malware/)
-    
--   [https://blog.trendmicro.com/trendlabs-security-intelligence/malicious-macro-hijacks-desktop-shortcuts-to-deliver-backdoor/](https://blog.trendmicro.com/trendlabs-security-intelligence/malicious-macro-hijacks-desktop-shortcuts-to-deliver-backdoor/)
+- **Mitre article**
+  - [https://attack.mitre.org/techniques/T1023/](https://attack.mitre.org/techniques/T1023/)
+- [https://www.sentinelone.com/blog/windows-shortcut-file-lnk-sneaking-malware/](https://www.sentinelone.com/blog/windows-shortcut-file-lnk-sneaking-malware/)  
+- [https://blog.trendmicro.com/trendlabs-security-intelligence/malicious-macro-hijacks-desktop-shortcuts-to-deliver-backdoor/](https://blog.trendmicro.com/trendlabs-security-intelligence/malicious-macro-hijacks-desktop-shortcuts-to-deliver-backdoor/)
