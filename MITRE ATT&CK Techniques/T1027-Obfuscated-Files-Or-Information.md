@@ -39,9 +39,7 @@ Mitigation of compressed and encrypted files sent over the network and through e
 
 ## References
 
--   **Mitre article**
-    
-    -   [https://attack.mitre.org/techniques/T1027/](https://attack.mitre.org/techniques/T1027/)
--   **Atomic Red Team Article**
-    
-    -   [Windows 10 to offer application developers new malware defeses](https://www.microsoft.com/security/blog/2015/06/09/windows-10-to-offer-application-developers-new-malware-defenses/)
+- **Mitre article**
+  - [https://attack.mitre.org/techniques/T1027/](https://attack.mitre.org/techniques/T1027/)
+- **Atomic Red Team Article**
+  - [Windows 10 to offer application developers new malware defeses](https://www.microsoft.com/security/blog/2015/06/09/windows-10-to-offer-application-developers-new-malware-defenses/)
