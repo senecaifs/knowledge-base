@@ -1,4 +1,3 @@
-
 # T1086 - Powershell
 
 ## Attributes
@@ -13,18 +12,17 @@ Find these on the MITRE page
 
 Powershell can be used to run scripts filled with arbitrary code created by the attackers, and also discover information about our system.  Powershell can also be used to download and run executables from the internet, and even run them in the memory, without being on any local disks. However, Administrative perms are required to use Powershell to connect to remote systems. Powershell scripts can also be executed without directly running the powershell.exe executable, but instead with Powershells underlying System.Management.Automation assembly exposed through the .NET framework and Windows CLI.  
 
-
 Powershell testing tools include: Empire, PowerSploit, and PSAttack.
 
 ## Tools to Perform Attack
 
-Powershell
+- Powershell
 
 ## Detection
 
-Attackers may try to change the execution policy either through the registry, or the command line. Check to see if this policy has been changed to detect if Powershell has been used in a malicious way. 
+Attackers may try to change the execution policy either through the registry, or the command line. Check to see if this policy has been changed to detect if Powershell has been used in a malicious way.
 
-Monitor for loading and/or execution of artifacts associated with Powershell specific assemblies, such as System.Management.Automation.dll 
+Monitor for loading and/or execution of artifacts associated with Powershell specific assemblies, such as System.Management.Automation.dll
 
 ### Enable Powershell logging using GP Editor
 
