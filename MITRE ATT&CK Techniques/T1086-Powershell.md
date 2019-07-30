@@ -3,6 +3,8 @@
 
 ## Attributes
 
+Find these on the MITRE page
+
 - Tactic: Execution
 - Effective Permissions: User, Administrator
 - Data Sources: Powershell Logs, Loaded DLLs, DLL monitoring, Windows Registry, File Monitoring, Process Monitoring, Process Command-Line Parameters
