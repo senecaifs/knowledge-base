@@ -19,8 +19,6 @@ Examples of events that may be subscribed to are the wall clock time or the comp
 
 Monitor WMI event subscription entries, comparing current WMI event subscriptions to known good subscriptions for each host. Tools such as Sysinternals Autoruns may also be used to detect WMI changes that could be attempts at persistence.
 
-
-
 ## Mitigation
 
 By default, only administrators are allowed to connect remotely using WMI; restrict other users that are allowed to connect, or disallow all users from connecting remotely to WMI. Prevent credential overlap across systems of administrator and privileged accounts.
@@ -29,4 +27,3 @@ By default, only administrators are allowed to connect remotely using WMI; restr
 
 - **Mitre article**
 - [https://attack.mitre.org/techniques/T1084/](https://attack.mitre.org/techniques/T1084/)
-
