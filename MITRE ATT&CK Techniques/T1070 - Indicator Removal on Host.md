@@ -2,9 +2,9 @@
 
 ## Attributes
 
-- Tactic: ```Defense Evasion```
-- Effective Permissions: ```Admin Permission```
-- Data Sources: ```File monitoring, Process monitoring, Process command-line parameters, API monitoring, Windows event logs```
+- Tactic: Defense Evasion
+- Effective Permissions: Admin Permission
+- Data Sources: File monitoring, Process monitoring, Process command-line parameters, API monitoring, Windows event logs
 
 ## Description
 
@@ -12,24 +12,21 @@ Attacker may delete or edit system logs or captured files such as quarantined ma
 
 Windows Events might get deleted !
 
-Linux Bash History ```~/.bash_history``` and logs in ```/var/log``` 
+Linux Bash History `~/.bash_history` and logs in `/var/log` 
 
 ## Tools to Perform Attack
 
-###### WINDOWS
+### WINDOWS
 
 - `wevtutil cl system`
-
 - `wevtutil cl application`
-
 - `wevtutil cl security`
+- `wevtutil el | Foreach-Object {wevtutil cl “$_”}`
 
-- ```wevtutil el | Foreach-Object {wevtutil cl “$_”}```
+### LINUX
 
-###### LINUX
-
-- ```rm -r /var/log/*```
-- ```rm ~/bash_history```
+- `rm -r /var/log/*`
+- `rm ~/bash_history`
 
 ## Detection
 
@@ -47,4 +44,3 @@ References to all articles go here
 - **T1070**
   - [T1070](https://attack.mitre.org/techniques/T1070/)
   - [Bash History](https://attack.mitre.org/techniques/T1139/)
-  - 
