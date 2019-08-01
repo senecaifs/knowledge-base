@@ -7,6 +7,7 @@ Tatic: Command and Control
 Data Sources: Packet capture, Netflow/Enclave netflow, Process use of network, Process monitoring
 
 ## Description
+
 To avoid drawing attention to traffic going between the Command and Control (C2) and the compromised system the attacker may utilize commonly used ports. Such ports include Port 80 (HTTP), port 443 (HTTPS), port 25 (SMTP) and port 52 (DNS). As all of these ports generally will have a great deal of traffic on an average network, additionally traffic by the attacker will not be noted as suspicious. More importantly, most firewalls and IDS will be configured to allow this traffic in and out. 
 
 ### Example
