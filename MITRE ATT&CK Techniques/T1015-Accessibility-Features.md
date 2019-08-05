@@ -1,21 +1,17 @@
 ﻿# T1015 - Accessibility Features
 
 ## Attributes
-
-Tactic: Persistence, Privilege escalation
-Effective Permissions: System
-Data Sources: Windows Registry, File monitoring, Process monitoring
+**Tactic**: Persistence, Privilege escalation
+**Effective Permissions**: System
+**Data Sources**: Windows Registry, File monitoring, Process monitoring
 
 ## Description
-
 The attacker will try to replace an accessibility executable such as **C:\Windows\System32\sethc.exe** or **C:\Windows\System32\sethc.exe** with **cmd.exe**. Once the accessibility executable has been replaced the attacker can now bring command prompt up regardless of user access by pressing **shift 5 times** or pressing **Win + U**.
 
 ## Tools to Perform Attack
-
 Windows command line using the **move** or **copy** command.
 
 ### Examples
-
 ```shell
 move /Y %windir%\System32\cmd.exe %windir%\System32\sethc.exe
 copy /y %windir%\System32\cmd.exe %windir%\System32\sethc.exe
@@ -28,7 +24,6 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 ```
 
 ### Other Accessibility Executables
-
 |File|Description|
 |-|-|
 |**C:\Windows\System32\osk.exe**| On-Screen Keyboard |
@@ -38,14 +33,12 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 |**C:\Windows\System32\AtBroker.exe**| App switcher |
 
 ## Detection
-
 Compare the hashes of the accessibility executables. A powershell script is available in references.
 
 Monitor the registry at
 > HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
 
 ### Example
-
 > HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe
 
 To search for this on kibana you would use the sysmon event ID 12/13/14 (Registry Events), with the context 
@@ -58,13 +51,10 @@ Sysmon - Event ID 1 - Process Create (rule: ProcessCreate)
 `ParentImage: utilman.exe /debug`
 
 ## Mitigation
-
-Ensure that Network Level Authentication is enabled so that RDP users can't access the login screen without being logged in.
+- Ensure that Network Level Authentication is enabled so that RDP users can't access the login screen without being logged in.
 
 ## References
-
-- **Mitre article**
-  - [https://attack.mitre.org/techniques/T1015/](https://attack.mitre.org/techniques/T1015/)
+  - [Mitre T1015](https://attack.mitre.org/techniques/T1015/)
 
 - **Atomic Red Team Article**
   - [https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1015/T1015.md](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1015/T1015.md)
