@@ -3,9 +3,9 @@
 
 ## Attributes
 
-**Tactic**: Execution, Persistence, Privilege Escalation
-**Effective Permissions**: Admin, SYSTEM, User
-**Data Sources**: File Monitoring, Process monitoring, process command-line parameters, Windows Event logs
+- **Tactic**: Execution, Persistence, Privilege Escalation
+- **Effective Permissions**: Admin, SYSTEM, User
+- **Data Sources**: File Monitoring, Process monitoring, process command-line parameters, Windows Event logs
 
 ## Description
 
