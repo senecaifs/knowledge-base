@@ -2,9 +2,9 @@
 
 ## Attributes
 
-**Tactic**: Persistence, Privilege escalation
-**Effective Permissions**: System
-**Data Sources**: Windows Registry, File monitoring, Process monitoring
+- **Tactic**: Persistence, Privilege escalation
+- **Effective Permissions**: System
+- **Data Sources**: Windows Registry, File monitoring, Process monitoring
 
 ## Description
 
