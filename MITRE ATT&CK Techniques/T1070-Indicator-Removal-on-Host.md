@@ -1,4 +1,3 @@
-﻿
 # T1070 - Indicator Removal on Host
 
 ## Attributes
