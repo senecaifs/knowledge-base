@@ -1,4 +1,3 @@
-
 # T1023 - Shortcut Modification
 
 ## Attributes
@@ -29,7 +28,6 @@ Correlation should attempt to relate shortcut file change or creation events to 
 ## Mitigation
 
 - Limit permissions for who can create symbolic links in Windows to appropriate groups such as Administrators and necessary groups for virtualization. This can be done through GPO: `Computer Configuration  > Windows Settings > Security Settings > Local Policies > User Rights Assignment`: Create symbolic links.
-
 - Identify and block unknown, potentially malicious software that may be executed through shortcut modification by using whitelisting tools, like AppLocker, or Software Restriction Policies where appropriate
 
 ## References
