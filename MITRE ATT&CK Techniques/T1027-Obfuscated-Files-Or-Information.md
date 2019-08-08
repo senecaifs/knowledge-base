@@ -2,10 +2,10 @@
 
 ## Attributes
 
-**Tactic**: Defense Evasion  
-**Effective Permissions**: System  
-**Data Sources**: Network protocol analysis, Process use of network, File monitoring, Malware reverse engineering, Binary file metadata, Process command-line parameters, Environment variable, Process monitoring, Windows event logs, Network intrusion detection system, Email gateway, SSL/TLS inspection
-**Defense Bypassed**: Host forensic analysis, Signature-based detection, Host intrusion prevention systems, Application whitelisting, Process whitelisting, Log analysis, Whitelisting by file name or path
+- **Tactic**: Defense Evasion  
+- **Effective Permissions**: System  
+- **Data Sources**: Network protocol analysis, Process use of network, File monitoring, Malware reverse engineering, Binary file metadata, Process command-line parameters, Environment variable, Process monitoring, Windows event logs, Network intrusion detection system, Email gateway, SSL/TLS inspection
+- **Defense Bypassed**: Host forensic analysis, Signature-based detection, Host intrusion prevention systems, Application whitelisting, Process whitelisting, Log analysis, Whitelisting by file name or path
 
 ## Description
 
