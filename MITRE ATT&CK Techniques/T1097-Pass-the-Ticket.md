@@ -1,11 +1,10 @@
-﻿
 # T1097 - Pass the Ticket
 
 ## Attributes
 
-**Tactic**: Lateral Movement
-**Effective Permissions**: Not Specified
-**Data Sources**: Authentication logs
+- **Tactic**: Lateral Movement
+- **Effective Permissions**: Not Specified
+- **Data Sources**: Authentication logs
 
 ## Description
 
