@@ -2,8 +2,8 @@
 
 ## Attributes
 
-**Tactic**: Command and Control
-**Data Sources**: Packet capture, Netflow/Enclave netflow, Process use of network, Process monitoring
+- **Tactic**: Command and Control
+- **Data Sources**: Packet capture, Netflow/Enclave netflow, Process use of network, Process monitoring
 
 ## Description
 
