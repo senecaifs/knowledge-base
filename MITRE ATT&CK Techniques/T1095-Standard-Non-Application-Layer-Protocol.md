@@ -24,5 +24,5 @@ Abnormal network traffic and data flow must be analyzed. Packet contents can be 
 
 ## References
 
--  [Mitre T1015](https://attack.mitre.org/techniques/T1015/)
+- [Mitre T1015](https://attack.mitre.org/techniques/T1015/)
 - [Mitre T1095](https://attack.mitre.org/techniques/T1095/)
