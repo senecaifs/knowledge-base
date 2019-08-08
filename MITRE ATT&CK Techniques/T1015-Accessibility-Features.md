@@ -1,4 +1,3 @@
-﻿
 # T1015 - Accessibility Features
 
 ## Attributes
@@ -65,13 +64,10 @@ Sysmon - Event ID 1 - Process Create (rule: ProcessCreate)
 
 ## References
 
-  - [Mitre T1015](https://attack.mitre.org/techniques/T1015/)
-
+- [Mitre T1015](https://attack.mitre.org/techniques/T1015/)
 - **Atomic Red Team Article**
   - [https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1015/T1015.md](https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1015/T1015.md)
-
 - **Sticky-Keys scanner powershell script**
   - [https://github.com/TrullJ/sticky-keys-scanner/blob/master/TestFor-StickyKey.ps1](https://github.com/TrullJ/sticky-keys-scanner/blob/master/TestFor-StickyKey.ps1)
-
 - **How to configure Network Level Authentication for RDP**
   - [https://www.darkoperator.com/blog/2012/3/17/configuring-network-level-authentication-for-rdp.html](https://www.darkoperator.com/blog/2012/3/17/configuring-network-level-authentication-for-rdp.html)
