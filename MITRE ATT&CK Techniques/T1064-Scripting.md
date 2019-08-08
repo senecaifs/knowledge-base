@@ -1,11 +1,10 @@
-
 # T1064 - Scripting
 
 ## Attributes
 
-**Tactic**: Defense Evasion, Execution
-**Permissions Required**: User
-**Data Sources**: Process monitoring, file monitoring, process command line parameters
+- **Tactic**: Defense Evasion, Execution
+- **Permissions Required**: User
+- **Data Sources**: Process monitoring, file monitoring, process command line parameters
 
 ## Description
 
