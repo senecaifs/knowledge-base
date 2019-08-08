@@ -16,7 +16,6 @@ Packers are used to perform packing. Some examples of popular packers include: M
 ## Mitigation
 
 - Make sure your Anti-virus definitions are up-to-date. Create new definitions if you observe malware that does not already have a signature. Try to use your own deduction and reasoning if you think an executable is malware.
-
 - Identify and prevent the execution of potentially malicious software that may have been packed by using whitelisting tools like AppLocker or Software Restriction Policies.
 
 ## Detection
