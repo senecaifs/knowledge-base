@@ -1,11 +1,14 @@
-﻿# T1097 - Pass the Ticket
+﻿
+# T1097 - Pass the Ticket
 
 ## Attributes
+
 **Tactic**: Lateral Movement
 **Effective Permissions**: Not Specified
 **Data Sources**: Authentication logs
 
 ## Description
+
 Pass the Ticket is an attack method that can allow an attacker to authenticate to a system using Kerberos tickets without knowledge of a users password.
 
 This attack falls into two categories, Golden Ticket and Silver Ticket.
@@ -15,6 +18,7 @@ Golden Tickets are obtained on a Domain Controller from the Key Distribution Ser
 Silver Tickets attacks are performed by crafting a TGS for a service account. A service account is a special account that is used by an application, such as SQL Server. In order to create a forged TGS the password or password hash must be known by an attacker.
 
 ## Tools to Perform Attack
+
 - Mimikatz
   - A tool that has the capability to gather credential data from a Windows System (Passwords, NTLM hash, TGT, TGS).
   - Mimikatz exists as an executable that can be run on Windows directly.
@@ -26,6 +30,7 @@ Silver Tickets attacks are performed by crafting a TGS for a service account. A 
   - Can leverage its own implementation of Mimikatz to obtain and use Silver and Golden tickets.
 
 ### Examples
+
 The following command is run using PowerSploit, it can execute Mimikatz on remote computers to gather credentials:
 
 ```powershell
@@ -52,6 +57,7 @@ kerberos::golden /admin:LukeSkywalker /id:1106 /domain:lab.adsecurity.org /sid:S
 ```
 
 ### Other Information
+
 #### Kerberos Protocol
 
 The following diagram shows the steps taken to authenticate to a server using Kerberos.
@@ -65,7 +71,9 @@ The Ticket Granting Ticket (TGT) is a ticket used to prove to the Key Distributi
 The Ticket Granting Service (TGS) is a ticket used to prove to a service that a user is authenticated, this ticket contains data that can only be decrypted by the service.
 
 ## Detection
+
 ### Monitoring
+
 #### Kerberos Logs
 
 - The following Windows Event IDs are related to Kerberos:
@@ -79,6 +87,7 @@ The Ticket Granting Service (TGS) is a ticket used to prove to a service that a 
 Using these event ID the analyst must look for anything out of the ordinary. For example if a TGS request or TGT renew is seen the analyst can look back in time to check if there is TGT request that match's the computer and user.
 
 #### Golden Ticket Detection
+
 - Golden Ticket events may have one of these issues:
   - The Account Domain field is blank when it should be DOMAIN.
   - The Account Domain field is DOMAIN FQDN when it should be DOMAIN.
@@ -92,6 +101,7 @@ Using these event ID the analyst must look for anything out of the ordinary. For
   - Account Domain:        _______________   [ADSECLAB]
 
 #### Silver Ticket Detection
+
 - Silver Ticket events may have one of these issues:
   - The Account Domain field is blank when it should be DOMAIN
   - The Account Domain field is DOMAIN FQDN when it should be DOMAIN.
@@ -109,6 +119,7 @@ Using these event ID the analyst must look for anything out of the ordinary. For
   - Account Domain:        _______________   [ADSECLAB]
 
 ### Detecting on Endpoint
+
 A blog [post](https://blog.stealthbits.com/detect-pass-the-ticket-attacks) writes about a useful way to detect pass the ticket attacks on an endpoint machine.
 
 The steps layed out in the blog post are as follows:
@@ -120,20 +131,26 @@ The steps layed out in the blog post are as follows:
 3. Look for Kerberos tickets that do not match the user associated with the session.  If found, that means those were injected into memory and a pass-the-ticket attack is afoot.  
   
 #### Example
+
 The following shows at example. The first red rectangle is a session for a user Micheal. However, the second rectangle shows from the ```klist``` command that the TGT is for the user Gene.
 ![Detect Pass The Ticket Example](https://blog.stealthbits.com/wp-content/uploads/2019/02/image-28.png)
 
 ## Mitigation
+
 ### Logon Rights
+
 There should be a minimum amount of Domain Administrators that have the right to logon to a DC.
 
 ### Golden Ticket Recovery
+
 To recover from a Golden Ticket attack the KRBTGT user account password will have to be reset twice.
 
 ### Silver Ticket Recovery
+
 To recover from a Silver Ticket attack the service account password will have to be reset.
 
 ## References
+
 - [T1097](https://attack.mitre.org/techniques/T1097/)
 - [How does Kerberos work? – Theory](https://www.tarlogic.com/en/blog/how-kerberos-works/)
 - [How to attack Kerberos?](https://www.tarlogic.com/en/blog/how-to-attack-kerberos/)

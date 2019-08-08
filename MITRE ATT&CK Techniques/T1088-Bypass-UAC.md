@@ -1,11 +1,14 @@
-﻿# T1088 – Bypass User Account Control
+﻿
+# T1088 – Bypass User Account Control
 
 ## Attributes
+
 **Tactic**: Defense Evasion, Privilege Escalation
 **Effective Permissions**: Administrator
 **Data Sources**: System calls, Process monitoring, Authentication logs, Process command-line parameters
 
 ## Description
+
 User Account Control (UAC) is a feature on Windows that works to prevent changes to the system without authorization. A pop-up will be triggered on the users’ screen when a program tries to make system changes, which requires interaction from the user, and, depending on the program/user account type, an Administrator password, to continue with the changes.
 
 The most common UAC attack involves attempting to bypass UAC by launching an application that has auto-elevated privileges after replacing the registry key content with the path to an executable that the attacker wants to run. This will allow the executable to be run without triggering the interactive pop up. This attack is most successful on a user who is part of the Local Administrators group.
@@ -13,14 +16,17 @@ The most common UAC attack involves attempting to bypass UAC by launching an app
 If the UAC protection level of a computer is set to anything but the highest level, certain Windows programs are allowed to elevate privileges or execute some elevated COM objects without prompting the user through the UAC prompt. 
 
 ## Tools to Perform Attack
+
 PowerShell, Command Line
 
 ### Examples
+
 Some processes will be called automatically with high privileges, such as `sdclt.exe`, which looks for the path to `control.exe`, and then runs it with elevated privileges. The attacker will change the path of the executable to one that they want to run elevated. An example PowerShell script to perform this attack can be found [here](https://raw.githubusercontent.com/enigma0x3/Misc-PowerShell-Stuff/master/Invoke-AppPathBypass.ps1)
 
 This method is also used with `eventvwr.exe` as it also automatically runs the application path specified elevated. Both of these techniques can be used as “fileless”, meaning that they are used to run PowerShell or another application on the victim’s system without needing to drop an executable. However, they may also be used with an executable that the attacker has first placed in the system – this attack will use a similar method.
 
 ## Detection
+
 To detect attacks where the registry keys for `eventvwr.exe` have been changed, monitor: `[HKEY_CURRENT_USER]\Software\Classes\mscfile\shell\open\command`
 
 For changes to the registry keys for `sdclt.exe`, monitor any changes to the following:
@@ -29,15 +35,18 @@ For changes to the registry keys for `sdclt.exe`, monitor any changes to the fol
 Additionally, monitor the processes being run by the applications commonly targeted in these attacks for unusual activity, and other Registry settings.
 
 ### Sysmon Event IDs
+
 - **12** – Registry object added or deleted
 - **13** – Registry value set
 - **1** – Process Create
 
 ## Mitigation
+
 - Ensure that users are not local administrators
 - Set UAC to **always notify**
  
 ## References
+
 - [Mitre T1088](https://attack.mitre.org/techniques/T1088/)
 - [Bypass UAC Using Registry Keys](https://attackiq.com/blog/2018/05/14/bypassing-uac-using-registry-keys/)
 - [UACMe](https://github.com/hfiref0x/UACME)
