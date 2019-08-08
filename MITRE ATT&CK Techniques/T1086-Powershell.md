@@ -2,11 +2,9 @@
 
 ## Attributes
 
-Find these on the MITRE page
-
-- Tactic: Execution
-- Effective Permissions: User, Administrator
-- Data Sources: Powershell Logs, Loaded DLLs, DLL monitoring, Windows Registry, File Monitoring, Process Monitoring, Process Command-Line Parameters
+**Tactic**: Execution
+**Effective Permissions**: User, Administrator
+**Data Sources**: Powershell Logs, Loaded DLLs, DLL monitoring, Windows Registry, File Monitoring, Process Monitoring, Process Command-Line Parameters
 
 ## Description
 
@@ -35,3 +33,7 @@ Powershell 4.0 and 5.0 should have enhanced logging capabilities (earlier versio
 Restrict Powershell execution policy to admins, and only signed scripts (if you're bold). To do this, open a Powershell window as an admin, and use the cmdlet `Set-ExecutionPolicy`. You can look up which execution policy to use based your needs [here.](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)
 
 Disable the WinRM service to help prevent uses of Powershell for remote execution.
+
+## References
+
+- [Mitre T1086](https://attack.mitre.org/techniques/T1086/)

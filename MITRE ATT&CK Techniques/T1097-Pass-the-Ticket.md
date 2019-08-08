@@ -1,10 +1,10 @@
-﻿# T1097 - Pass the Ticket
+# T1097 - Pass the Ticket
 
 ## Attributes
 
-- Tactic: Lateral Movement
-- Effective Permissions: Not Specified
-- Data Sources: Authentication logs
+- **Tactic**: Lateral Movement
+- **Effective Permissions**: Not Specified
+- **Data Sources**: Authentication logs
 
 ## Description
 
@@ -150,11 +150,10 @@ To recover from a Silver Ticket attack the service account password will have to
 
 ## References
 
-- **T1097**
-  - [T1097](https://attack.mitre.org/techniques/T1097/)
-  - [How does Kerberos work? – Theory](https://www.tarlogic.com/en/blog/how-kerberos-works/)
-  - [How to attack Kerberos?](https://www.tarlogic.com/en/blog/how-to-attack-kerberos/)
-  - [Silver Ticket Attack](https://adsecurity.org/?p=2011)
-  - [Good Video on Kerberos Protocol](https://www.youtube.com/watch?v=WXgKiiFqJbI)
-  - [Detecting Forged Kerberos Ticket (Golden Ticket & Silver Ticket) Use in Active Directory](https://adsecurity.org/?p=1515)
-  - [Detect Pass the Ticket Attacks](https://blog.stealthbits.com/detect-pass-the-ticket-attacks)
+- [T1097](https://attack.mitre.org/techniques/T1097/)
+- [How does Kerberos work? – Theory](https://www.tarlogic.com/en/blog/how-kerberos-works/)
+- [How to attack Kerberos?](https://www.tarlogic.com/en/blog/how-to-attack-kerberos/)
+- [Silver Ticket Attack](https://adsecurity.org/?p=2011)
+- [Good Video on Kerberos Protocol](https://www.youtube.com/watch?v=WXgKiiFqJbI)
+- [Detecting Forged Kerberos Ticket (Golden Ticket & Silver Ticket) Use in Active Directory](https://adsecurity.org/?p=1515)
+- [Detect Pass the Ticket Attacks](https://blog.stealthbits.com/detect-pass-the-ticket-attacks)

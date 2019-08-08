@@ -1,10 +1,10 @@
-﻿# T1053 - Scheduled Task
+# T1053 - Scheduled Task
 
 ## Attributes
 
-Tactic: Execution, Persistence, Priviledge Escalation
-Effective Permissions: Admin, SYSTEM, User
-Data Sources: File Monitoring, Process monitoring, process command-line parameters, Windows Event logs
+- **Tactic**: Execution, Persistence, Privilege Escalation
+- **Effective Permissions**: Admin, SYSTEM, User
+- **Data Sources**: File Monitoring, Process monitoring, process command-line parameters, Windows Event logs
 
 ## Description
 
@@ -36,25 +36,26 @@ Several events will be logged onto the scheduled task activity from then on incl
 - Event ID 140 - Scheduled task updated
 - Event ID 141 - Scheduled task removed
 
-Other tools such as Sysinternals Autoruns may be used ti detect system changes that could be attempts at persistence, including listing current scheduled tasks. Look for changes to scheduled tasks like outlier processes that have not shown up before, and compare it against historical data.
+Other tools such as Sysinternals Autoruns may be used to detect system changes that could be attempts at persistence, including listing current scheduled tasks. Look for changes to scheduled tasks like outlier processes that have not shown up before, and compare it against historical data.
 Remote access tools with built-in features may interact directly with the Windows API to perform these functions outside of typical system utilities. Tasks may also be created through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and PowerShell, so additional logging may need to be configured to gather the appropriate data.
 Remote access tools may also have features that may interact directly with Windows API to perform functions outside typical system utilities. Tasks may also be created through Windows Management Instrumentation or Powershell, so additional logging may be needed to gather appropriate information.
 
 ## Mitigation
 
-Privileges of user accounts should be limited; only authorized admins should be able to create scheduled tasks on any system. Usage of Powershell and cmd should also be limited to admins. Pen testing tools such as Powersploit  framework contain modules that can be used to search a system for permission weaknesses in scheduled tasks that could be used to escalate privileges.
+- Privileges of user accounts should be limited; only authorized admins should be able to create scheduled tasks on any system
+- Usage of Powershell and cmd should also be limited to admins. Pen testing tools such as Powersploit  framework contain modules that can be used to search a system for permission weaknesses in scheduled tasks that could be used to escalate privileges.
 
 ### Techniques/Examples
 
 Regular users should be prevented from running or stopping Task Scheduler by modifying the registry, or by changing the group policy through `gpedit.msc`. More on that [here](https://support.microsoft.com/en-ca/help/305612/how-to-prevent-a-user-from-running-task-scheduler-in-windows).
 
-Configure settings for scheduled tasks to force tasks to run under the context of the authenticated account instead of allowing them to run in default as SYSTEM. The associated Registry key is located at `HKLM\SYSTEM\CurrentControlSet\Control\Lsa\SubmitControl`. The setting can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > Security Options: Domain Controller: Allow server operators to schedule tasks, disabled.
+Configure settings for scheduled tasks to force tasks to run under the context of the authenticated account instead of allowing them to run in default as SYSTEM. The associated Registry key is located at `HKLM\SYSTEM\CurrentControlSet\Control\Lsa\SubmitControl`. The setting can be configured through GPO: `Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options > Domain Controller`: disabled.
 
-Configure the Increase Scheduling Priority option to only allow the Administrators group the rights to schedule a priority process. This can be can be configured through GPO: Computer Configuration > [Policies] > Windows Settings > Security Settings > Local Policies > User Rights Assignment: Increase scheduling priority.
+Configure the Increase Scheduling Priority option to only allow the Administrators group the rights to schedule a priority process. This can be can be configured through GPO: `Computer Configuration  > Windows Settings > Security Settings > Local Policies > User Rights Assignment`: Increase scheduling priority.
 
 Identify and block unnecessary system utilities or potentially malicious software that may be used to schedule tasks using whitelisting tools, such as Software Restriction Policies.
 
 ## References
 
-- [T1053](https://attack.mitre.org/techniques/T1053/)
+- [Mitre T1053](https://attack.mitre.org/techniques/T1053/)
 - [How to prevent a user from running Task Scheduler in Windows](https://support.microsoft.com/en-ca/help/305612/how-to-prevent-a-user-from-running-task-scheduler-in-windows)

@@ -1,10 +1,10 @@
-# T1064- Scripting
+# T1064 - Scripting
 
 ## Attributes
 
-Tactic: Defense Evasion, Execution
-Effective Permissions: User
-Data Sources: Process monitoring, file monitoring, process command line parameters
+- **Tactic**: Defense Evasion, Execution
+- **Permissions Required**: User
+- **Data Sources**: Process monitoring, file monitoring, process command line parameters
 
 ## Description
 
@@ -12,17 +12,25 @@ Scripting is used to aid in operations and perform multiple actions in quick suc
 
 ## Tools to Perform Attack
 
-Powershell, VBScript, Metaspoit, Veil, batch scripts, Python, Java script, shell script, MS Word Scripts, etc.
+- Powershell (.ps)
+- VBScript (.vb)
+- Metaspoit
+- Veil 
+- Batch scripts (.bat)
+- Python (.py)
+- Java script (.js)
+- Shell script (.sh)
+- MS Word Scripts
 
 ### Examples
 
 An exploit in MS word allows one to run a script simply by opening the .docx file.
-In depth example on how this works:
-https://null-byte.wonderhowto.com/how-to/execute-code-microsoft-word-document-without-security-warnings-0180495/
+In depth example on how this works [here](https://null-byte.wonderhowto.com/how-to/execute-code-microsoft-word-document-without-security-warnings-0180495/).
 
 ## Detection
 
-Scripts are commonly used on admin/developer systems. If scripting is disabled for regular users, any attempts to run or enable scripting should be considered suspicious. If scripts are not commonly used on a particular system but enabled, any running out of cycle or with admin functionality should be considered suspicious. Scrips like these should be found within the file system and analyzed to determine actions and intent. 
+Scripts are commonly used on admin/developer systems. If scripting is disabled for regular users, any attempts to run or enable scripting should be considered suspicious. If scripts are not commonly used on a particular system but enabled, any running out of cycle or with admin functionality should be considered suspicious. Scripts like these should be found within the file system and analyzed to determine actions and intent. 
+
 Often, the effects of the scripts running on the particular system will generate event logs. Processes and command line arguments for script execution should be monitored closely. Actions may be related to network and system information discovery, collections, and/or other scriptable post-compromise behaviors could be used as indicators that lead back to the source script.
 
 ### Example
@@ -31,10 +39,11 @@ Office file attachments that may contain potentially malicious macros. Execution
 
 ## Mitigation
 
-Disable any unused features such as VBScript or restrict access to scripting engines or scriptable admin frameworks such as PowerShell.
-To mitigate against Office macros, enable protected view and block macros through Group Policy. Having a virtualized enviroment, or application microsegmentation may also aid in mitigating the impact of a compromise, however, additional exploits and weaknesses in implementation may still exist.
+- Disable any unused features such as VBScript or restrict access to scripting engines or scriptable admin frameworks such as PowerShell.
+- Enable protected view and block macros through Group Policy, to be protected against Microsoft Office macros. 
+- Having a virtualized enviroment, or application microsegmentation may also aid in mitigating the impact of a compromise, however, additional exploits and weaknesses in implementation may still exist.
 
 ## References
 
-- [T1064](https://attack.mitre.org/techniques/T1064/)
+- [Mitre T1064](https://attack.mitre.org/techniques/T1064/)
 - [Execute Code in a Microsoft Word Document Without Security Warnings](https://null-byte.wonderhowto.com/how-to/execute-code-microsoft-word-document-without-security-warnings-0180495/)

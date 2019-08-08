@@ -2,9 +2,8 @@
 
 ## Attributes
 
-Tactic: Execution
-
-Permissions: User
+- **Tactic**: Execution
+- **Permissions**: User
 
 ### Data Sources
 
@@ -18,12 +17,15 @@ This relies on a user interaction with communications sent by an attacker. This 
 
 ## Detection
 
-Antivirus can be used to detect malicious files that have been downloaded. Additionally, watching commandline arguments being executed within the network, specifically for command directed at compression applications, as these may be used to hide the files.
+Antivirus can be used to detect malicious files that have been downloaded. Additionally, watching command line arguments being executed within the network, specifically for command directed at compression applications, as these may be used to hide the files.
 
 ## Migation
 
-Proper training of end users is the key to mitigating this - basic training to not open links or download documents from unknown sources will help to avoid successful attacts using this method. Certain file formats should be blocked for download by users that are not coming from a whitelisted site/sender and all downloaded files scanned prior to opening. Ensuring that a good antivirus is installed on all devices and is actively scanning all downloads prior to allowing them to be opened will also help avoid falling victim to this type of attack. Finally, using whitelisting for applications that can be installed will also help prevent malicious executables from successfully running.
+- Proper training of end users is the key to mitigating this - basic training to not open links or download documents from unknown sources will help to avoid successful attacts using this method.
+- Certain file formats should be blocked for download by users that are not coming from a whitelisted site/sender and all downloaded files scanned prior to opening.
+- Ensuring that a good antivirus is installed on all devices and is actively scanning all downloads prior to allowing them to be opened will also help avoid falling victim to this type of attack.
+- Using whitelisting for applications such as Applocker will also help prevent malicious executables from successfully running.
 
 ## References
 
-- [T1024](https://attack.mitre.org/techniques/T1204/)
+- [Mitre T1024](https://attack.mitre.org/techniques/T1204/)
