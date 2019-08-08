@@ -1,13 +1,11 @@
-﻿
-
 # T1060 - Registry Run Keys / Startup Folder
 
 ## Attributes
 
-**Tactic**: Persistence
-**System Requirements**: HKEY_LOCAL_MACHINE keys require administrator access to create and modify
-**Effective Permissions**: User, Administrator
-**Data Sources**: Windows Registry, File monitoring
+- **Tactic**: Persistence
+- **System Requirements**: HKEY_LOCAL_MACHINE keys require administrator access to create and modify
+- **Effective Permissions**: User, Administrator
+- **Data Sources**: Windows Registry, File monitoring
 
 ## Description
 
@@ -44,5 +42,3 @@ Tools such as Sysinternals Autoruns may also be used to detect system changes th
 ## References
 
 - [Mitre T1060](https://attack.mitre.org/techniques/T1060/)
-
-
