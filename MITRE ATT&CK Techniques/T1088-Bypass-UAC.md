@@ -1,11 +1,10 @@
-﻿
 # T1088 – Bypass User Account Control
 
 ## Attributes
 
-**Tactic**: Defense Evasion, Privilege Escalation
-**Effective Permissions**: Administrator
-**Data Sources**: System calls, Process monitoring, Authentication logs, Process command-line parameters
+- **Tactic**: Defense Evasion, Privilege Escalation
+- **Effective Permissions**: Administrator
+- **Data Sources**: System calls, Process monitoring, Authentication logs, Process command-line parameters
 
 ## Description
 
@@ -17,7 +16,8 @@ If the UAC protection level of a computer is set to anything but the highest lev
 
 ## Tools to Perform Attack
 
-PowerShell, Command Line
+- PowerShell
+- Command Line
 
 ### Examples
 
