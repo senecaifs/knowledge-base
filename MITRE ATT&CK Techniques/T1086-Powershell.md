@@ -1,4 +1,3 @@
-
 # T1086 - Powershell
 
 ## Attributes
