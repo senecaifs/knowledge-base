@@ -2,8 +2,8 @@
 
 ## Attributes
 
-**Tactic**: Execution
-**Permissions**: User
+- **Tactic**: Execution
+- **Permissions**: User
 
 ### Data Sources
 
