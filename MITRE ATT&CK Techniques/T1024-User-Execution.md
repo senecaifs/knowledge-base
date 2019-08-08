@@ -1,4 +1,3 @@
-
 # T1204 - User Execution 
 
 ## Attributes
@@ -22,12 +21,9 @@ Antivirus can be used to detect malicious files that have been downloaded. Addit
 
 ## Migation
 
-- Proper training of end users is the key to mitigating this - basic training to not open links or download documents from unknown sources will help to avoid successful attacts using this method. 
-
-- Certain file formats should be blocked for download by users that are not coming from a whitelisted site/sender and all downloaded files scanned prior to opening. 
-
-- Ensuring that a good antivirus is installed on all devices and is actively scanning all downloads prior to allowing them to be opened will also help avoid falling victim to this type of attack. 
-
+- Proper training of end users is the key to mitigating this - basic training to not open links or download documents from unknown sources will help to avoid successful attacts using this method.
+- Certain file formats should be blocked for download by users that are not coming from a whitelisted site/sender and all downloaded files scanned prior to opening.
+- Ensuring that a good antivirus is installed on all devices and is actively scanning all downloads prior to allowing them to be opened will also help avoid falling victim to this type of attack.
 - Using whitelisting for applications such as Applocker will also help prevent malicious executables from successfully running.
 
 ## References
