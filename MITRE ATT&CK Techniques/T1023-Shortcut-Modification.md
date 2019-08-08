@@ -2,10 +2,10 @@
 
 ## Attributes
 
-**Tactic**: Persistence  
-**Platform**: Windows  
-**Permissions Required**: User, Administrator  
-**Data Sources**: File monitoring, Process monitoring, Process command-line parameters
+- **Tactic**: Persistence  
+- **Platform**: Windows  
+- **Permissions Required**: User, Administrator  
+- **Data Sources**: File monitoring, Process monitoring, Process command-line parameters
 
 ## Description
 
